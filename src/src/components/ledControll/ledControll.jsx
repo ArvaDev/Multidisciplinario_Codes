@@ -1,47 +1,43 @@
 import './ledControll.css';
 import LedBtn from './ledBtn/ledBtn';
 import { useState } from 'react';
+import axios from 'axios';
 
 export default function LedControll({ leds }) {
-    // Inicializar el estado con un objeto que represente el estado de los LEDs
     const [ledStates, setLedStates] = useState({
-        led1: false,
-        led2: false,
-        led3: false
+        Uv: false,
+        visible: false,
+        If: false
     });
-
-    // Función para actualizar el estado del LED
     const toggleLed = (index) => {
         const newLedStates = {
-            led1: false,
-            led2: false,
-            led3: false
+            Uv: false,
+            visible: false,
+            If: false
         };
-        if (index === 0) newLedStates.led1 = true;
-        if (index === 1) newLedStates.led2 = true;
-        if (index === 2) newLedStates.led3 = true;
+        if (index === 'Uv') newLedStates.Uv = !ledStates.Uv;
+        if (index === 'visible') newLedStates.visible = !ledStates.visible;
+        if (index === 'If') newLedStates.If = !ledStates.If;
 
         setLedStates(newLedStates);
-        console.log(newLedStates)
-
-        // Enviar el post con los leds
+        axios.post('http://52.72.151.221/events', newLedStates);
     };
 
     return (
         <div className='LedControllClass card'>
             <p className='t nC'>Panel</p>
             <div className='Leds'>
-                {[0, 1, 2].map((index) => (
+                {['Uv', 'visible', 'If'].map((key) => (
                     <LedBtn
-                        isOn={ledStates[`led${index + 1}`]}
-                        onClick={() => toggleLed(index)}
-                        key={index}
+                        key={key}
+                        isOn={ledStates[key]}
+                        onClick={() => toggleLed(key)}
                     />
                 ))}
             </div>
             <div className='titles'>
-                <p className={`nC ${leds?.IF ? 'on' : 'off'}`}>Infrarrojo</p>
                 <p className={`nC ${leds?.UV ? 'on' : 'off'}`}>UV</p>
+                <p className={`nC ${leds?.IF ? 'on' : 'off'}`}>Infrarrojo</p>
                 <p className={`nC ${leds?.visible ? 'on' : 'off'}`}>Luz normal</p>
             </div>
         </div>

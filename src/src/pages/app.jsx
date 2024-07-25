@@ -31,7 +31,6 @@ export default function App() {
             console.log('Desconectado del servidor');
         });
     }, [])
-    console.log(data)
     return (
         <div className='AppClass'>
             <CardM limitMin={0} limitMax={20} max={100}
