@@ -5,7 +5,6 @@ import CardM from '../components/card/cardM';
 import TimeLine from '../components/timeLine/timeLine';
 import LedControll from '../components/ledControll/ledControll';
 import Display from '../components/display/display';
-import History from '../components/history/history';
 import { useEffect, useState } from 'react';
 export default function App() {
     const [data, setData] = useState();

@@ -2,22 +2,40 @@ import './ledControll.css';
 import LedBtn from './ledBtn/ledBtn';
 import { useState } from 'react';
 
-export default function LedControll({leds}) {
-    console.log(leds)
-    const [activeLedIndex, setActiveLedIndex] = useState(null);
+export default function LedControll({ leds }) {
+    // Inicializar el estado con un objeto que represente el estado de los LEDs
+    const [ledStates, setLedStates] = useState({
+        led1: false,
+        led2: false,
+        led3: false
+    });
 
+    // Función para actualizar el estado del LED
     const toggleLed = (index) => {
-        setActiveLedIndex(index === activeLedIndex ? null : index);
+        const newLedStates = {
+            led1: false,
+            led2: false,
+            led3: false
+        };
+        if (index === 0) newLedStates.led1 = true;
+        if (index === 1) newLedStates.led2 = true;
+        if (index === 2) newLedStates.led3 = true;
 
+        setLedStates(newLedStates);
+        console.log(newLedStates)
+
+        // Enviar el post con los leds
     };
+
     return (
         <div className='LedControllClass card'>
             <p className='t nC'>Panel</p>
             <div className='Leds'>
                 {[0, 1, 2].map((index) => (
                     <LedBtn
-                        isOn={index === activeLedIndex}
+                        isOn={ledStates[`led${index + 1}`]}
                         onClick={() => toggleLed(index)}
+                        key={index}
                     />
                 ))}
             </div>

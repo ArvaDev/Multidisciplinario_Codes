@@ -22,14 +22,16 @@ export default function TimeLine() {
                 </div>
                 <div className='time'>
                     <div className='tempTime par'>
+                        {/* Aquí poner el map de las estadisticas de temperatura */}
                         {tempData.map((item, index) => (
-                            <DataCard errorMinLimit={28} errorMaxLimit={40} maxLimit={40} index={
+                            <DataCard errorMinLimit={32} errorMaxLimit={40} maxLimit={40} index={
                                 currentHour + ":" + String(((index) * 2) > 9 ? ((index) * 2) : "0" + ((index) * 2))
                             } color={'#ff8929'} porsent={item} cont="°C" />
                         ))}
                     </div>
                     <div className='division'></div>
                     <div className='humeTime par'>
+                    {/* Aquí poner el map de las estadisticas de humedad */}
                         {humeData.map((item, index) => (
                             <DataCard 
                                 errorMinLimit={0} errorMaxLimit={25}
