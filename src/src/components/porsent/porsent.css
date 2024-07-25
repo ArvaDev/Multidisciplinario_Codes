@@ -1,0 +1,52 @@
+.PorsentClass {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    box-shadow: -5px -5px 10px 0 #7d7d7d 
+                ,5px 5px 10px 0 #141414;
+}
+
+.PorsentClass .internal {
+    position: relative;
+    border-radius: 1000px;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    box-shadow: inset -5px -5px 5px 0 #7d7d7d 
+                ,inset 5px 5px 5px 0 #141414;
+}
+
+.PorsentClass svg {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 70%;
+    width: 100%;
+    height: 100%;
+}
+
+.PorsentClass svg .Back {
+    stroke: #373737;
+}
+
+circle {
+    fill: none;
+    stroke-width: 16%;
+    transform-origin: 50%;
+    stroke-linecap: round;
+    transform-origin: 50%;
+    transform: rotate(90deg);
+    transition: 1s;
+}
+text {
+    user-select: none;
+}
+.svgText {
+    fill: #b6b6b6;
+    font-size: 20px;
+}
+
+stop {
+    transition: 1s;
+}

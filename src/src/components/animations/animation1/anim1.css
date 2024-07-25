@@ -1,0 +1,40 @@
+.Anim1Class {
+    cursor: pointer;
+    margin: 20px 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+    box-shadow: -5px -5px 10px 0 #878787, 5px 5px 10px 0 #0e0e0e;
+}
+.Anim1Class .MainCont {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    overflow: hidden;
+}
+.Anim1Class .MainCont .Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: blur(1px) url(#turbulence);
+}
+
+.Anim1Class .Container .border {
+    width: 75%;
+    height: 75%;
+    border-radius: 15px;
+    animation: rotateO 10s infinite linear;
+}
+
+@keyframes rotateO {
+    to{transform: rotate(0);}
+    from{transform: rotate(360deg);}
+}
+
+svg {
+    position: relative;
+    width: 0;
+    height: 0;
+}

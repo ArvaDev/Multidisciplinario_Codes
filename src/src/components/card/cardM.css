@@ -1,0 +1,33 @@
+.CardMClass {
+    width: 35%;
+    height: 50vh;
+    flex-wrap: wrap;
+}
+
+.CardMClass .Title {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.CardMClass .SensorData {
+    background: #3a3a3a;
+    border-radius: 10px;
+    border: 1px solid #434343;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+}
+.CardMClass .Info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 30%;
+    height: 80%;
+}
+.CardMClass .cont {
+    margin: 10px;
+}

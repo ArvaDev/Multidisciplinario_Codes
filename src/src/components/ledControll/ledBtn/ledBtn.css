@@ -1,0 +1,31 @@
+.LedBtnClass {
+    cursor: pointer;
+    width: 20%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #515151;
+    border-radius: 10px;
+    transition: .1s;
+}
+
+.LedBtnClass.on {
+    box-shadow: inset 2px 2px 5px 0 #686868, inset -2px -2px 5px 0 #141414;
+
+    .bulb {
+        color: white;
+    }
+}
+
+.LedBtnClass.off {
+    box-shadow: 5px 5px 10px 0 #141414, inset 2px 2px 5px 0 #686868, inset -2px -2px 5px 0 #141414;
+
+    .bulb {
+        color: #d1d1d1;
+    }
+}
+
+.LedBtnClass .bulb {
+    width: 50%;
+}

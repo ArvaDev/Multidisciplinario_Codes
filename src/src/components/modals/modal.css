@@ -1,0 +1,27 @@
+.Modal {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    padding: 5px;
+    background: #444444;
+    border: 1px solid #6c6c6c;
+    bottom: 100%;
+    left: 80%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: .25s;
+    color: white;
+    z-index: 1000;
+}
+
+.Modal p {
+    margin: 10px;
+    width: 80%;
+}
+
+.icon {
+    width: 20%;
+    height: 100%;
+}
