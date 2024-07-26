@@ -14,7 +14,6 @@ export default function App() {
                 'Authorization': '123ADWAWDAWDQWDAD33'
             }
         });
-
         socket.on('connect', () => {
             console.log('Conectado al servidor');
         });

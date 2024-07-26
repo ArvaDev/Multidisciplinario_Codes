@@ -7,8 +7,8 @@ export default function Login() {
 
     const onSubmit = (data) => {
         axios.post('http://52.72.151.221/auth/access', data)
-            .then(data => {
-                console.log(data.token)
+            .then(response => {
+                console.log(response.data)
                 // localStorage.setItem('token', JSON.stringify(data.token));
                 // location.href = '/app';
             }).catch(error  => {
